@@ -37,7 +37,7 @@ include("include/sidebar.php");
         <div class="well well-custom">
           <ul class="nav nav-tabs nav-justified nav-tabs-custom">
             <li><a href="manage-admin.php">Người Quản Lí</a></li>
-            <li><a href="admin-manage-user.php">Quản Lí Nhân Viên</a></li>
+            <li><a href="admin-manage-user.php">Quản Lí Bác Sĩ</a></li>
           </ul>
           <div class="gap"></div>
 
@@ -51,14 +51,14 @@ include("include/sidebar.php");
                         <div class="col-md-7">
                           <form class="form-horizontal" role="form" action="" method="post" autocomplete="off">
                             <div class="form-group">
-                              <label class="control-label col-sm-2">FullName</label>
+                              <label class="control-label col-sm-2">Họ và Tên</label>
                               <div class="col-sm-8">
                                 <input type="text" value="<?php echo $row['fullname']; ?>" placeholder="Enter Employee Name" name="em_fullname" list="expense" class="form-control input-custom" id="default" required>
                               </div>
                             </div>
                             
                             <div class="form-group">
-                              <label class="control-label col-sm-2">Name</label>
+                              <label class="control-label col-sm-2">Tên Đăng Nhập</label>
                               <div class="col-sm-8">
                                 <input type="text" value="<?php echo $row['username']; ?>" placeholder="Enter Employee username" name="em_username" class="form-control input-custom" required>
                               </div>

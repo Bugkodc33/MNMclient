@@ -27,17 +27,17 @@ include("include/sidebar.php");
         <div class="well well-custom">
           <ul class="nav nav-tabs nav-justified nav-tabs-custom">
             <li class="active"><a href="manage-admin.php">Người Quản Lý</a></li>
-            <li><a href="admin-manage-user.php">Quản Lý Nhân Viên</a></li>
+            <li><a href="admin-manage-user.php">Quản Lý Bác Sĩ</a></li>
           </ul>
           <div class="gap"></div>
           <div class="table-responsive">
             <table class="table table-codensed table-custom">
               <thead>
                 <tr>
-                  <th style="color:green">Serial.</th>
-                  <th style="color:green">Tên</th>
+                  <th style="color:green">#</th>
+                  <th style="color:green">Họ và Tên</th>
                   <th style="color:green">Thư Điện Tử</th>
-                  <th style="color:green">Tên</th>
+                  <th style="color:green">Tên Đăng Nhập</th>
                   <th style="color:green">Chi Tiết</th>
                 </tr>
               </thead>

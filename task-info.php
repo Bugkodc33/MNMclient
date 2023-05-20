@@ -43,7 +43,7 @@ include("include/sidebar.php");
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Nhiệm Vụ Quản Lý</h2>
+          <h2 class="modal-title text-center">Thêm Mới Công Việc</h2>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -51,7 +51,7 @@ include("include/sidebar.php");
               <form role="form" action="" method="post" autocomplete="off">
                 <div class="form-horizontal">
                   <div class="form-group">
-                    <label class="control-label col-sm-5">Tiêu Đề Nhiệm Vụ</label>
+                    <label class="control-label col-sm-5">Tên Công Việc</label>
                     <div class="col-sm-7">
                       <input type="text" placeholder="Tiêu Đề Nhiệm Vụ" id="task_title" name="task_title" list="expense" class="form-control" id="default" required>
                     </div>
@@ -75,14 +75,14 @@ include("include/sidebar.php");
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="control-label col-sm-5">Giao Nhiệm Vụ</label>
+                    <label class="control-label col-sm-5">Bác Sĩ Phụ Trách</label>
                     <div class="col-sm-7">
                       <?php 
                         $sql = "SELECT user_id, fullname FROM tbl_admin WHERE user_role = 2";
                         $info = $obj_admin->manage_all_info($sql);   
                       ?>
                       <select class="form-control" name="assign_to" id="aassign_to" required>
-                        <option value="">Chọn Nhân Viên...</option>
+                        <option value="">Chọn Bác Sĩ...</option>
 
                         <?php while($row = $info->fetch(PDO::FETCH_ASSOC)){ ?>
                         <option value="<?php echo $row['user_id']; ?>"><?php echo $row['fullname']; ?></option>
@@ -143,8 +143,8 @@ include("include/sidebar.php");
               <thead>
                 <tr>
                   <th style="color:green">#</th>
-                  <th style="color:green">Tiêu Đề Nhiệm Vụ</th>
-                  <th style="color:green">Phân Công</th>
+                  <th style="color:green">Tên Công Việc</th>
+                  <th style="color:green">Bác Sĩ Phụ Trách</th>
                   <th style="color:green">Bắt Đầu</th>
                   <th style="color:green">Kết Thúc</th>
                   <th style="color:green">Trạng Thái</th>
@@ -183,11 +183,11 @@ include("include/sidebar.php");
                   <td><?php echo $row['t_end_time']; ?></td>
                   <td>
                     <?php  if($row['status'] == 1){
-                        echo "In Progress <span style='color:#d4ab3a;' class=' glyphicon glyphicon-refresh' >";
+                        echo "Trong Tiến Trình <span style='color:#d4ab3a;' class=' glyphicon glyphicon-refresh' >";
                     }elseif($row['status'] == 2){
-                       echo "Completed <span style='color:#00af16;' class=' glyphicon glyphicon-ok' >";
+                       echo "Hoàn Thành <span style='color:#00af16;' class=' glyphicon glyphicon-ok' >";
                     }else{
-                      echo "Incomplete <span style='color:#d00909;' class=' glyphicon glyphicon-remove' >";
+                      echo "Chưa Hoàn Thiện <span style='color:#d00909;' class=' glyphicon glyphicon-remove' >";
                     } ?>
                     
                   </td>

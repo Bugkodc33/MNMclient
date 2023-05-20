@@ -44,28 +44,28 @@ include("include/sidebar.php");
         <div class="well well-custom">
           <ul class="nav nav-tabs nav-justified nav-tabs-custom">
             <li><a href="manage-admin.php">Người Quản Lí</a></li>
-            <li><a href="admin-manage-user.php">Quản Lí Nhân Viên</a></li>
+            <li><a href="admin-manage-user.php">Quản Lí Bác Sĩ</a></li>
           </ul>
           <div class="gap"></div>
 
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
               <div class="well">
-                <h3 class="text-center bg-primary" style="padding: 7px;">Chỉnh Sửa Nhân Viên</h3><br>
+                <h3 class="text-center bg-primary" style="padding: 7px;">Chỉnh Sửa Bác Sĩ</h3><br>
 
 
                       <div class="row">
                         <div class="col-md-7">
                           <form class="form-horizontal" role="form" action="" method="post" autocomplete="off">
                             <div class="form-group">
-                              <label class="control-label col-sm-2">Fullname</label>
+                              <label class="control-label col-sm-2">Họ và Tên</label>
                               <div class="col-sm-8">
                                 <input type="text" value="<?php echo $row['fullname']; ?>" placeholder="Enter Employee Name" name="em_fullname" list="expense" class="form-control input-custom" id="default" required>
                               </div>
                             </div>
                             
                             <div class="form-group">
-                              <label class="control-label col-sm-2">Username</label>
+                              <label class="control-label col-sm-2">Tên Đăng Nhập</label>
                               <div class="col-sm-8">
                                 <input type="text" value="<?php echo $row['username']; ?>" placeholder="Enter Employee Username" name="em_username" class="form-control input-custom" required>
                               </div>

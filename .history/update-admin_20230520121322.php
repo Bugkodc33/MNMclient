@@ -44,7 +44,7 @@ include("include/sidebar.php");
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
               <div class="well">
-                <h3 class="text-center bg-primary" style="padding: 7px; background-color :#d4ab3a">Chỉnh Sửa Quản Lí</h3><br>
+                <h3 class="text-center bg-primary" style="padding: 7px;">Chỉnh Sửa Quản Lí</h3><br>
 
 
                       <div class="row">

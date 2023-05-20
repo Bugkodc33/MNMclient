@@ -557,15 +557,13 @@ input.input-custom::-moz-placeholder {
     color: black;
     background-color: #e2b840;
     border-color: #e2b840;
-	transition: all 0.9s ease-in-out;
-	border-radius: 5px;
+	transition: all 0.9 ease-in-out;
 }
 .btn-success:hover {
-	transition: all 0.9s ease-in-out;
+	transition: all 0.9 ease-in-out;
 	background-color: #5cb85c;
     border-color: #5cb85c;
 	color: white;
-	border-radius: 5px;
 }
 
 @media(max-width: 767px){

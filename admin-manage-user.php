@@ -123,12 +123,12 @@ if(isset($_POST['add_new_employee'])){
           <?php } ?>
             <?php if($user_role == 1){ ?>
                 <div class="btn-group">
-                  <button class="btn btn-success btn-menu" data-toggle="modal" data-target="#myModal">Thêm Nhân Viên Mới</button>
+                  <button class="btn btn-success btn-menu" data-toggle="modal" data-target="#myModal">Thêm Bác Sĩ Mới</button>
                 </div>
               <?php } ?>
           <ul class="nav nav-tabs nav-justified nav-tabs-custom">
             <li><a href="manage-admin.php">Người Quản Lí</a></li>
-            <li class="active"><a href="admin-manage-user.php">Người Quản Lí Nhân Viên</a></li>
+            <li class="active"><a href="admin-manage-user.php">Quản Lý Bác Sĩ</a></li>
           </ul>
           <div class="gap"></div>
           <div class="table-responsive">

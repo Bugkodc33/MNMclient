@@ -84,8 +84,8 @@ include("include/sidebar.php");
                 <tr>
                   <th style="color:green">#</th>
                   <th style="color:green">Bác Sĩ</th>
-                  <th style="color:green">Đúng giờ</th>
-                  <th style="color:green">Ngoài Giờ</th>
+                  <th style="color:green">Giờ Vô Ca</th>
+                  <th style="color:green">Giờ Trực</th>
                   <th style="color:green">Tổng Thời Gian</th>
                   <th style="color:green">Trạng Thái</th>
                   <?php if($user_role == 1){ ?>
@@ -144,7 +144,7 @@ include("include/sidebar.php");
                     <form method="post" role="form" action="">
                       <input type="hidden" name="punch_in_time" value="<?php echo $row['in_time']; ?>">
                       <input type="hidden" name="aten_id" value="<?php echo $row['aten_id']; ?>">
-                      <button type="submit" name="add_punch_out" class="btn btn-danger btn-xs rounded" >Hết Giờ</button>
+                      <button type="submit" name="add_punch_out" class="btn btn-danger btn-xs rounded" >Xử lý</button>
                     </form>
                   </td>
                 <?php } ?>

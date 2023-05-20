@@ -397,10 +397,8 @@ input.input-custom::-moz-placeholder {
 .form-custom-login .form-heading {
 	border-radius: 3px;
   background: #00B16A;
-  padding: 13px 15px;
-  transition: all 0.5s ease-in-out;
+  padding: 10px 15px;
 }
-
 .form-custom-login .form-heading h2 {
   color: #fff;
   margin: 0;
@@ -427,8 +425,9 @@ input.input-custom::-moz-placeholder {
 	transition: all 0.5s ease ;
 
 }
-
-
+.text-center:hover {
+    color: black
+}
 
 .login-gap{
 	margin-top: 5rem;

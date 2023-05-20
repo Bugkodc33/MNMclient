@@ -27,7 +27,7 @@ include("include/login_header.php");
 		<center>
 			<h2 style="margin-top:1px; font-size:20px ;     margin-top: 1px;
     font-size: 20px;
-    margin-bottom: 30px;    text-transform: uppercase;"> Quản Lý Công Việc Nhân Viên</h2>
+    margin-bottom: 30px;"> Quản Lý Công Việc Nhân Viên</h2>
 	</center>
 			<form class="form-horizontal form-custom-login" action="" method="POST">
 			  <div class="form-heading" style="color:green">

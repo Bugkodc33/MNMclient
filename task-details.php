@@ -54,7 +54,7 @@ $row = $info->fetch(PDO::FETCH_ASSOC);
 				                  <table class="table table-bordered table-single-product">
 				                    <tbody>
 				                      <tr>
-				                        <td>Tiêu Đề Nhiệm Vụ</td><td><?php echo $row['t_title']; ?></td>
+				                        <td>Tên Công Việc</td><td><?php echo $row['t_title']; ?></td>
 				                      </tr>
 				                      <tr>
 				                        <td>Mô Tả</td><td><?php echo $row['t_description']; ?></td>
@@ -66,7 +66,7 @@ $row = $info->fetch(PDO::FETCH_ASSOC);
 				                        <td>Thời Gian Kết Thúc</td><td><?php echo $row['t_end_time']; ?></td>
 				                      </tr>
 				                      <tr>
-				                        <td>Giao Cho</td><td><?php echo $row['fullname']; ?></td>
+				                        <td>Bác Sĩ Phụ Trách</td><td><?php echo $row['fullname']; ?></td>
 				                      </tr>
 				                      <tr>
 				                        <td>Trạng Thái</td><td><?php  if($row['status'] == 1){

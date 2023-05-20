@@ -53,7 +53,7 @@ if(isset($_POST['add_new_employee'])){
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Thêm Thông Tin Nhân Viên</h2>
+          <h2 class="modal-title text-center">Thêm Thông Tin Bác Sĩ</h2>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -135,11 +135,11 @@ if(isset($_POST['add_new_employee'])){
             <table class="table table-codensed table-custom">
               <thead>
                 <tr>
-                  <th style="color:green">Serial.</th>
+                  <th style="color:green">#</th>
                   <th style="color:green">Tên Đầy Đủ</th>
                   <th style="color:green">Thư Điện Tử</th>
-                  <th style="color:green">Tên</th>
-                  <th style="color:green">Mật Khẩu Tạm Thời</th>
+                  <th style="color:green">Tên Đăng Nhập</th>
+                  <th style="color:green">Mật Khẩu</th>
                   <th style="color:green">Chi Tiết</th>
                 </tr>
               </thead>

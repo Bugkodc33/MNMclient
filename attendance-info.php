@@ -73,7 +73,7 @@ include("include/sidebar.php");
             
           </div>
 
-          <center><h3>Quản Lí Chấm Công</h3>  </center>
+          <center><h3>Lịch Phân Công</h3>  </center>
           <div class="gap"></div>
 
           <div class="gap"></div>
@@ -82,8 +82,8 @@ include("include/sidebar.php");
             <table class="table table-codensed table-custom">
               <thead>
                 <tr>
-                  <th style="color:green">S.N.</th>
-                  <th style="color:green">Tên</th>
+                  <th style="color:green">#</th>
+                  <th style="color:green">Bác Sĩ</th>
                   <th style="color:green">Đúng giờ</th>
                   <th style="color:green">Ngoài Giờ</th>
                   <th style="color:green">Tổng Thời Gian</th>

@@ -182,7 +182,7 @@
 	margin-top: 1rem;
 }
 .btn-warning:hover {
-	background-color: rgb(19, 123, 19) ;
+	background-color: rgb(228, 224, 224);
 }
 
 /*============navigation sidebar design=============*/
@@ -267,7 +267,6 @@ input.input-custom::-moz-placeholder {
 }
 .btn-primary {
 	background-color: #00B16A;
-	border-radius: 7px;
 	transition: all 0.8s ease-in-out;
 }
 .btn-primary:hover{

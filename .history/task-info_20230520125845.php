@@ -124,7 +124,7 @@ include("include/sidebar.php");
               <div class="btn-group">
                 <?php if($user_role == 1){ ?>
                 <div class="btn-group">
-                  <button class="btn btn-warning btn-menu" style="color:white; padding:10px ; border-radius:10px ;" data-toggle="modal" data-target="#myModal">Nhiệm Vụ</button>
+                  <button class="btn btn-warning btn-menu" style="color:white; padding:10px ; border-radius:10px" data-toggle="modal" data-target="#myModal">Nhiệm Vụ</button>
                 </div>
               <?php } ?>
 

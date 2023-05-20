@@ -143,6 +143,9 @@
 			opacity: 1;
 		}
 	}
+.btn-group {
+	border-radius: 5px;
+}
 	nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
 		color: #CCC;
 		background-color: transparent;
@@ -182,7 +185,7 @@
 	margin-top: 1rem;
 }
 .btn-warning:hover {
-	background-color: rgb(19, 123, 19) ;
+	background-color: rgb(228, 224, 224);
 }
 
 /*============navigation sidebar design=============*/
@@ -264,16 +267,6 @@ input.input-custom::-moz-placeholder {
 	transition: all 0.4s ease;
 	border-radius: 10px;
 	
-}
-.btn-primary {
-	background-color: #00B16A;
-	border-radius: 7px;
-	transition: all 0.8s ease-in-out;
-}
-.btn-primary:hover{
-	background-color: #00B16A;
-	border-radius: 7px;
-	transition: all 0.8s ease-in-out;
 }
 
 .btn-success-custom:hover{

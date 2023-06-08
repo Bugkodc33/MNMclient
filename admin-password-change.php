@@ -74,19 +74,19 @@ include("include/sidebar.php");
                             <div class="form-group">
                               <label class="control-label col-sm-4">Mật khẩu cũ</label>
                               <div class="col-sm-8">
-                                <input type="password" placeholder="Enter Old Password" name="admin_old_password" id="admin_old_password" list="expense" class="form-control input-custom" required>
+                                <input type="password" placeholder="Nhập mật khẩu cũ" name="admin_old_password" id="admin_old_password" list="expense" class="form-control input-custom" required>
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-4">Mật khẩu mới</label>
                               <div class="col-sm-8">
-                                <input type="password" placeholder="Enter New Password" name="admin_new_password" id="admin_new_password" class="form-control input-custom" min="8" required>
+                                <input type="password" placeholder="Nhập mật khẩu mới" name="admin_new_password" id="admin_new_password" class="form-control input-custom" min="8" required>
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-4">Nhập lại mật khẩu mới</label>
                               <div class="col-sm-8">
-                                <input type="password" placeholder="Confirm New Password" name="admin_cnew_password" id="admin_cnew_password" list="expense" min="8" class="form-control input-custom" required>
+                                <input type="password" placeholder="Nhập lại mật khẩu mới" name="admin_cnew_password" id="admin_cnew_password" list="expense" min="8" class="form-control input-custom" required>
                               </div>
                             </div>
                       

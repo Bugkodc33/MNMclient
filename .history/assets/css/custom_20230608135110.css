@@ -430,7 +430,7 @@ input.input-custom::-moz-placeholder {
   background-color: 
  
 #d4ab3a;
-  border-radius: 10px;
+  border-radius: 3px;
   margin-right: 15px;
   margin-bottom: 15px;
   transition: all 0.5s ease-in-out ;

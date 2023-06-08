@@ -44,14 +44,14 @@ include("include/sidebar.php");
       <div class="col-md-12">
         <div class="well well-custom">
           <ul class="nav nav-tabs nav-justified nav-tabs-custom">
-            <li class="active"><a href="manage-admin.php">Manage Admin</a></li>
-            <li><a href="admin-manage-user.php">Manage User</a></li>
+            <li class="active"><a href="manage-admin.php">Quản lý Admin</a></li>
+            <li><a href="admin-manage-user.php">Quản lý bác sĩ</a></li>
           </ul>
           <div class="gap"></div>
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
               <div class="well">
-                <h3 class="text-center bg-primary">Admin - Change Password</h3><br>
+                <h3 class="text-center bg-primary">Admin - Thay đổi mật khẩu</h3><br>
 
 
                       <div class="row">
@@ -72,19 +72,19 @@ include("include/sidebar.php");
 
                           <form class="form-horizontal" role="form" action="" method="post" autocomplete="off">
                             <div class="form-group">
-                              <label class="control-label col-sm-4">Old Password</label>
+                              <label class="control-label col-sm-4">Mật khẩu cũ</label>
                               <div class="col-sm-8">
                                 <input type="password" placeholder="Enter Old Password" name="admin_old_password" id="admin_old_password" list="expense" class="form-control input-custom" required>
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="control-label col-sm-4">New Password</label>
+                              <label class="control-label col-sm-4">Mật khẩu mới</label>
                               <div class="col-sm-8">
                                 <input type="password" placeholder="Enter New Password" name="admin_new_password" id="admin_new_password" class="form-control input-custom" min="8" required>
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="control-label col-sm-4">Confirm New Password</label>
+                              <label class="control-label col-sm-4">Nhập lại mật khẩu mới</label>
                               <div class="col-sm-8">
                                 <input type="password" placeholder="Confirm New Password" name="admin_cnew_password" id="admin_cnew_password" list="expense" min="8" class="form-control input-custom" required>
                               </div>
@@ -94,11 +94,11 @@ include("include/sidebar.php");
                             </div>
                             <div class="form-group">
                               <div class="col-sm-offset-4 col-sm-3">
-                                <button type="submit" name="btn_admin_password" class="btn btn-success-custom">Change</button>
+                                <button type="submit" name="btn_admin_password" class="btn btn-success-custom">Thay đổi</button>
                                 
                               </div>
                               <div class="col-sm-3">
-                                <a href="manage-admin.php" class="btn btn-danger-custom">cancel</a>
+                                <a href="manage-admin.php" class="btn btn-danger-custom">Quay lại</a>
                                 
                               </div>
                             </div>

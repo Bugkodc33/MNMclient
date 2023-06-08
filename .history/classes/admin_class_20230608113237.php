@@ -109,7 +109,7 @@ class Admin_Class
 			}
 
 		}else{
-			$message = 'MẬT KHẨU KHÔNG CHÍNH XÁC';
+			$message = 'Sorry !! Password Can not match';
             return $message;
 		}
 

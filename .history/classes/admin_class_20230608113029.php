@@ -109,7 +109,7 @@ class Admin_Class
 			}
 
 		}else{
-			$message = 'MẬT KHẨU KHÔNG CHÍNH XÁC';
+			$message = 'Sorry !! Password Can not match';
             return $message;
 		}
 
@@ -212,8 +212,7 @@ class Admin_Class
 		$user_email = $this->test_form_input_data($data['em_email']);
 
 		try{
-			$update_user = $this->db->prepare("UPDATE tbl_admin SET
-			 fullname = :x, username = :y, email = :z WHERE user_id = :id ");
+			$update_user = $this->db->prepare("UPDATE tbl_admin SET fullname = :x, username = :y, email = :z WHERE user_id = :id ");
 
 			$update_user->bindparam(':x', $user_fullname);
 			$update_user->bindparam(':y', $user_username);
@@ -278,8 +277,8 @@ class Admin_Class
 				$all_error .= '<br>'."MẬT KHẨU CÓ ĐỘ DÀI PHẢI LỚN HƠN 6";
 			}
 			if(empty($all_error)){
-				$update_admin_password = $this->db->prepare("UPDATE tbl_admin 
-				SET password = :x WHERE user_id = :id ");
+				$update_admin_password = $this->db->prepare("UPDATE tbl_admin SET password = :x WHERE user_id = :id ");
+
 				$update_admin_password->bindparam(':x', $admin_new_password);
 				$update_admin_password->bindparam(':id', $id);
 				

@@ -38,8 +38,7 @@ class Admin_Class
 		$username = $this->test_form_input_data($data['username']);
         try
        {
-          $stmt = $this->db->prepare("SELECT * FROM tbl_admin WHERE username=:uname AND
-		   password=:upass LIMIT 1");
+          $stmt = $this->db->prepare("SELECT * FROM tbl_admin WHERE username=:uname AND password=:upass LIMIT 1");
           $stmt->execute(array(':uname'=>$username, ':upass'=>$upass));
           $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
           if($stmt->rowCount() > 0)
@@ -55,7 +54,9 @@ class Admin_Class
 	                header('Location: task-info.php');
           		}else{
           			header('Location: changePasswordForEmployee.php');
-          		} 
+          		}
+                
+             
           }else{
 			  $message = 'TÀI KHOẢN HOẶC MẬT KHẨU SAI VUI LÒNG THỬ LẠI';
               return $message;
@@ -109,7 +110,7 @@ class Admin_Class
 			}
 
 		}else{
-			$message = 'MẬT KHẨU KHÔNG CHÍNH XÁC';
+			$message = 'Sorry !! Password Can not match';
             return $message;
 		}
 
@@ -212,8 +213,7 @@ class Admin_Class
 		$user_email = $this->test_form_input_data($data['em_email']);
 
 		try{
-			$update_user = $this->db->prepare("UPDATE tbl_admin SET
-			 fullname = :x, username = :y, email = :z WHERE user_id = :id ");
+			$update_user = $this->db->prepare("UPDATE tbl_admin SET fullname = :x, username = :y, email = :z WHERE user_id = :id ");
 
 			$update_user->bindparam(':x', $user_fullname);
 			$update_user->bindparam(':y', $user_username);
@@ -262,24 +262,33 @@ class Admin_Class
 		$admin_raw_password = $this->test_form_input_data($data['admin_new_password']);
 		
 		try{
-			$sql = "SELECT * FROM tbl_admin WHERE user_id = '$id' 
-			AND password = '$admin_old_password' ";
+
+			// old password matching check 
+
+			$sql = "SELECT * FROM tbl_admin WHERE user_id = '$id' AND password = '$admin_old_password' ";
+
 			$query_result = $this->manage_all_info($sql);
+
 			$total_row = $query_result->rowCount();
 			$all_error = '';
 			if($total_row == 0){
-				$all_error = "MẬT KHẨU CŨ , LỖI !";
+				$all_error = "Invalid old password";
 			}
+			
+
 			if($admin_new_password != $admin_cnew_password ){
-				$all_error .= '<br>'."NHẬP MẬT MỚI KHÔNG KHỚP";
+				$all_error .= '<br>'."New and Confirm New password do not match";
 			}
+
 			$password_length = strlen($admin_raw_password);
+
 			if($password_length < 6){
-				$all_error .= '<br>'."MẬT KHẨU CÓ ĐỘ DÀI PHẢI LỚN HƠN 6";
+				$all_error .= '<br>'."Password length must be more then 6 character";
 			}
+
 			if(empty($all_error)){
-				$update_admin_password = $this->db->prepare("UPDATE tbl_admin 
-				SET password = :x WHERE user_id = :id ");
+				$update_admin_password = $this->db->prepare("UPDATE tbl_admin SET password = :x WHERE user_id = :id ");
+
 				$update_admin_password->bindparam(':x', $admin_new_password);
 				$update_admin_password->bindparam(':id', $id);
 				
@@ -292,8 +301,10 @@ class Admin_Class
 			}else{
 				return $all_error;
 			}
+
+			
 		}catch (PDOException $e) {
-			echo "lỖI";
+			echo $e->getMessage();
 		}
 	}
 

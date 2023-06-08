@@ -115,7 +115,7 @@ if(isset($_POST['add_new_employee'])){
       <div class="col-md-12">
         <div class="row">
             
-        <div class="well well-custom" style="background: black;">
+        <div class="well well-custom">
           <?php if(isset($error)){ ?>
           <script type="text/javascript">
             $('#myModal').modal('show');
@@ -162,7 +162,7 @@ if(isset($_POST['add_new_employee'])){
                   <td><?php echo $row['username']; ?></td>
                   <td><?php echo $row['temp_password']; ?></td>
                   
-                  <td><a title="Update Employee" href="update-employee.php?admin_id=<?php echo $row['user_id']; ?>"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;&nbsp;<a title="Delete" href="?delete_user=delete_user&admin_id=<?php echo $row['user_id']; ?>" onclick=" return check_delete();"><span class="glyphicon glyphicon-trash"></span></a></td>
+                  <td><a title="Update Employee" href="update-employee.php?admin_id=<?php echo $row['user_id']; ?>"><span class="glyphicon glyphicon-edit"></span></a><a title="Delete" href="?delete_user=delete_user&admin_id=<?php echo $row['user_id']; ?>" onclick=" return check_delete();"><span class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
                 
               <?php  } ?>

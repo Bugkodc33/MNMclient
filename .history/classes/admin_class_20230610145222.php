@@ -22,12 +22,11 @@ class Admin_Class
 
 /* ---------------------- test_form_input_data ----------------------------------- */
 	
-	public function check($login_data) {
-        $login_data = trim($login_data);
-		// loai bo khoang trang
-        $login_data = stripslashes($login_data);
-		// bo cac dau dac biet 
-	return $login_data ;
+	public function test_form_input_data($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+	return $data;
 	}
 
  
@@ -35,8 +34,8 @@ class Admin_Class
 
     public function admin_login_check($data) {
         
-        $upass = $this->check(md5($data['admin_password']));
-		$username = $this->check($data['username']);
+        $upass = $this->test_form_input_data(md5($data['admin_password']));
+		$username = $this->test_form_input_data($data['username']);
         try
        {
           $stmt = $this->db->prepare("SELECT * FROM tbl_admin WHERE username=:uname AND
@@ -55,16 +54,16 @@ class Admin_Class
           		if($userRow['temp_password'] == null){
 	                header('Location: task-info.php');
           		}else{
-          			echo "Lỗi";
+          			echo "Lỗi"
           		} 
           }else{
-			  $result = 'TÀI KHOẢN HOẶC MẬT KHẨU SAI VUI LÒNG THỬ LẠI';
-              return $result;
+			  $message = 'TÀI KHOẢN HOẶC MẬT KHẨU SAI VUI LÒNG THỬ LẠI';
+              return $message;
 		  }
        }
-       catch(PDOException $variable)
+       catch(PDOException $e)
        {
-           echo $variable->getMessage();
+           echo $e->getMessage();
        }	
 		
     }
@@ -72,10 +71,10 @@ class Admin_Class
 
 
     public function change_password_for_employee($data){
-    	$password  = $this->check($data['password']);
-		$re_password = $this->check($data['re_password']);
+    	$password  = $this->test_form_input_data($data['password']);
+		$re_password = $this->test_form_input_data($data['re_password']);
 
-		$user_id = $this->check($data['user_id']);
+		$user_id = $this->test_form_input_data($data['user_id']);
 		$final_password = md5($password);
 		$temp_password = '';
 
@@ -133,11 +132,11 @@ class Admin_Class
 /*----------- add_new_user--------------*/
 
 	public function add_new_user($data){
-		$user_fullname  = $this->check($data['em_fullname']);
-		$user_username = $this->check($data['em_username']);
-		$user_email = $this->check($data['em_email']);
+		$user_fullname  = $this->test_form_input_data($data['em_fullname']);
+		$user_username = $this->test_form_input_data($data['em_username']);
+		$user_email = $this->test_form_input_data($data['em_email']);
 		$temp_password = rand(000000001,10000000);
-		$user_password = $this->check(md5($temp_password));
+		$user_password = $this->test_form_input_data(md5($temp_password));
 		$user_role = 2;
 		try{
 			$sqlEmail = "SELECT email FROM tbl_admin WHERE email = '$user_email' ";
@@ -183,9 +182,9 @@ class Admin_Class
 /* ---------update_user_data----------*/
 
 	public function update_user_data($data, $id){
-		$user_fullname  = $this->check($data['em_fullname']);
-		$user_username = $this->check($data['em_username']);
-		$user_email = $this->check($data['em_email']);
+		$user_fullname  = $this->test_form_input_data($data['em_fullname']);
+		$user_username = $this->test_form_input_data($data['em_username']);
+		$user_email = $this->test_form_input_data($data['em_email']);
 		try{
 			$update_user = $this->db->prepare("UPDATE tbl_admin SET fullname = :x, username = :y, email = :z WHERE user_id = :id ");
 
@@ -208,9 +207,9 @@ class Admin_Class
 /* ------------update_admin_data-------------------- */
 
 	public function update_admin_data($data, $id){
-		$user_fullname  = $this->check($data['em_fullname']);
-		$user_username = $this->check($data['em_username']);
-		$user_email = $this->check($data['em_email']);
+		$user_fullname  = $this->test_form_input_data($data['em_fullname']);
+		$user_username = $this->test_form_input_data($data['em_username']);
+		$user_email = $this->test_form_input_data($data['em_email']);
 
 		try{
 			$update_user = $this->db->prepare("UPDATE tbl_admin SET
@@ -233,7 +232,7 @@ class Admin_Class
 /* ------update_user_password------------------*/
 	
 	public function update_user_password($data, $id){
-		$employee_password  = $this->check(md5($data['employee_password']));
+		$employee_password  = $this->test_form_input_data(md5($data['employee_password']));
 		
 		try{
 			$update_user_password = $this->db->prepare("UPDATE tbl_admin SET password = :x WHERE user_id = :id ");
@@ -257,10 +256,10 @@ class Admin_Class
 /* -------------admin_password_change------------*/
 
 	public function admin_password_change($data, $id){
-		$admin_old_password  = $this->check(md5($data['admin_old_password']));
-		$admin_new_password  = $this->check(md5($data['admin_new_password']));
-		$admin_cnew_password  = $this->check(md5($data['admin_cnew_password']));
-		$admin_raw_password = $this->check($data['admin_new_password']);
+		$admin_old_password  = $this->test_form_input_data(md5($data['admin_old_password']));
+		$admin_new_password  = $this->test_form_input_data(md5($data['admin_new_password']));
+		$admin_cnew_password  = $this->test_form_input_data(md5($data['admin_cnew_password']));
+		$admin_raw_password = $this->test_form_input_data($data['admin_new_password']);
 		
 		try{
 			$sql = "SELECT * FROM tbl_admin WHERE user_id = '$id' 
@@ -305,11 +304,11 @@ class Admin_Class
 
 	public function add_new_task($data){
 		// data insert   
-		$task_title  = $this->check($data['task_title']);
-		$task_description = $this->check($data['task_description']);
-		$t_start_time = $this->check($data['t_start_time']);
-		$t_end_time = $this->check($data['t_end_time']);
-		$assign_to = $this->check($data['assign_to']);
+		$task_title  = $this->test_form_input_data($data['task_title']);
+		$task_description = $this->test_form_input_data($data['task_description']);
+		$t_start_time = $this->test_form_input_data($data['t_start_time']);
+		$t_end_time = $this->test_form_input_data($data['t_end_time']);
+		$assign_to = $this->test_form_input_data($data['assign_to']);
 
 		try{
 			$add_task = $this->db->prepare("INSERT INTO task_info (t_title, t_description, t_start_time, 
@@ -333,14 +332,14 @@ class Admin_Class
 
 
 		public function update_task_info($data, $task_id, $user_role){
-			$task_title  = $this->check($data['task_title']);
-			$task_description = $this->check($data['task_description']);
-			$t_start_time = $this->check($data['t_start_time']);
-			$t_end_time = $this->check($data['t_end_time']);
-			$status = $this->check($data['status']);
+			$task_title  = $this->test_form_input_data($data['task_title']);
+			$task_description = $this->test_form_input_data($data['task_description']);
+			$t_start_time = $this->test_form_input_data($data['t_start_time']);
+			$t_end_time = $this->test_form_input_data($data['t_end_time']);
+			$status = $this->test_form_input_data($data['status']);
 
 			if($user_role == 1){
-				$assign_to = $this->check($data['assign_to']);
+				$assign_to = $this->test_form_input_data($data['assign_to']);
 			}else{
 				$sql = "SELECT * FROM task_info WHERE task_id='$task_id' ";
 				$info = $this->manage_all_info($sql);
@@ -379,7 +378,7 @@ class Admin_Class
 		// data insert 
 		$date = new DateTime('now', new DateTimeZone('Asia/Dhaka'));
  		
-		$user_id  = $this->check($data['user_id']);
+		$user_id  = $this->test_form_input_data($data['user_id']);
 		$punch_in_time = $date->format('d-m-Y H:i:s');
 
 		try{
@@ -397,14 +396,14 @@ class Admin_Class
 	public function add_punch_out($data){
 		$date = new DateTime('now', new DateTimeZone('Asia/Dhaka'));
 		$punch_out_time = $date->format('d-m-Y H:i:s');
-		$punch_in_time  = $this->check($data['punch_in_time']);
+		$punch_in_time  = $this->test_form_input_data($data['punch_in_time']);
 
 		$dteStart = new DateTime($punch_in_time);
         $dteEnd   = new DateTime($punch_out_time);
         $dteDiff  = $dteStart->diff($dteEnd);
         $total_duration = $dteDiff->format("%H:%I:%S");
 
-		$attendance_id  = $this->check($data['aten_id']);
+		$attendance_id  = $this->test_form_input_data($data['aten_id']);
 
 		try{
 			$update_user = $this->db->prepare("UPDATE attendance_info SET out_time = :x, total_duration = :y WHERE aten_id = :id ");

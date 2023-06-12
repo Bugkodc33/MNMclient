@@ -29,7 +29,7 @@ include("include/login_header.php");
     font-size: 20px;
     margin-bottom: 30px;    text-transform: uppercase;"> Quản Lý Bác Sĩ</h2>
 	</center>
-			<form class="form-horizontal form-custom-login" action="" method="POST" novalidate>
+			<form class="form-horizontal form-custom-login" action="" method="POST">
 			  <div class="form-heading" style="color:green">
 			    <h2 class="text-center"  style="font-size: 15px ; color:black"> Tài Khoản </h2>
 			  </div>
@@ -42,9 +42,9 @@ include("include/login_header.php");
 			    <input type="text" class="form-control" placeholder="Vui Lòng Nhập Tài Khoản" name="username" required maxlength="15" autocomplete="off"/>
 			  </div>
 			  <div class="form-group" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$dirty, 'has-success': loginForm.password.$valid}">
-			    <input type="password" class="form-control" placeholder="Vui Lòng Nhập Mật Khẩu" name="admin_password" required maxlength="15" autocomplete="off" />
+			    <input type="password" class="form-control" placeholder="Vui Lòng Nhập Mật Khẩu" name="admin_password" required maxlength="15" autocomplete="off"/>
 			  </div>
-			  <button type="submit" name="login_btn" class="btn btn-info pull-right" placeholder="Vui Long Đăng Nhập"  style="font-size:15px">Đăng Nhập</button>
+			  <button type="submit" name="login_btn" class="btn btn-info pull-right" aria-placeholder="Vui Long Đăng Nhập"  style="font-size:15px">Đăng Nhập</button>
 			</form>
 		</div>
 	</div>

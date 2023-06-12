@@ -42,7 +42,7 @@ include("include/login_header.php");
 			    <input type="text" class="form-control" placeholder="Vui Lòng Nhập Tài Khoản" name="username" required maxlength="15" autocomplete="off"/>
 			  </div>
 			  <div class="form-group" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$dirty, 'has-success': loginForm.password.$valid}">
-			    <input type="password" class="form-control" placeholder="Vui Lòng Nhập Mật Khẩu" name="admin_password" required maxlength="15" autocomplete="off" />
+			    <input type="password" class="form-control" placeholder="Vui Lòng Nhập Mật Khẩu" name="admin_password" required maxlength="15" autocomplete="off" re/>
 			  </div>
 			  <button type="submit" name="login_btn" class="btn btn-info pull-right" placeholder="Vui Long Đăng Nhập"  style="font-size:15px">Đăng Nhập</button>
 			</form>

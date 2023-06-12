@@ -24,9 +24,7 @@ class Admin_Class
 	
 	public function check($login_data) {
         $login_data = trim($login_data);
-		// loai bo khoang trang
         $login_data = stripslashes($login_data);
-		// bo cac dau dac biet 
 	return $login_data ;
 	}
 

@@ -176,7 +176,8 @@
 
 .well-custom{
 	margin-top: 0.5rem;
-	background: rgb(24, 20, 20);
+	background: rgb(219, 243 ,243);
+	border: 5px groove #2c2628;
 }
 
 .gap{

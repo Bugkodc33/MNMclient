@@ -115,7 +115,7 @@ if(isset($_POST['add_new_employee'])){
       <div class="col-md-12">
         <div class="row">
             
-        <div class="well well-custom" style="background: black;">
+        <div class="well well-custom">
           <?php if(isset($error)){ ?>
           <script type="text/javascript">
             $('#myModal').modal('show');
